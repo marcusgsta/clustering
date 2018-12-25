@@ -1,6 +1,6 @@
 # CLUSTERING with Python Backend and Vue.js Frontend
 
-## marcusgsta-ai.info - to see app in production
+## marcusgsta-ai.info - to see app in production 
 
 ### Set up Python Virtural Environment (tester in terminal on MacOs)
 
