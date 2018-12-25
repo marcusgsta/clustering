@@ -13,14 +13,16 @@
 
         <v-spacer></v-spacer>
 
+        <!-- <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'facebook' }" /> -->
         <v-btn
           v-for="icon in icons"
           :key="icon"
-          class="mx-3"
-          dark
-          icon
-        >
-          <v-icon size="24px">{{ icon }}</v-icon>
+          class="mx-1 social_icon"
+          icon>
+          <a :href="icon[0]">
+          <font-awesome-icon :icon="{ prefix: prefix, iconName: icon[1] }" />
+        </a>
+
         </v-btn>
       </v-card-title>
 
@@ -34,13 +36,18 @@
 <script>
   export default {
     data: () => ({
+      prefix: 'fab',
       icons: [
-        'fab fa-facebook',
-        'fab fa-twitter',
-        'fab fa-google-plus',
-        'fab fa-linkedin',
-        'fab fa-instagram'
+        ['https://facebook.com/marcussn', 'facebook'],
+        ['https://twitter.com/marcusgu1','twitter'],
+        ['https://www.linkedin.com/in/marcus-gustafsson-80b595a3/', 'linkedin'],
+        ['https://instagram.com/marcusgsta', 'instagram']
       ]
     })
   }
 </script>
+<style>
+    .social_icon a{
+        color: #fff;
+    }
+</style>
