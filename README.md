@@ -1,4 +1,28 @@
-# vue-cli
+# CLUSTERING with Python Backend and Vue.js Frontend
+
+
+### Set up Python Virtural Environment (tester in terminal on MacOs)
+
+```
+python3.6 -m venv venv36
+source venv36/bin/activate
+
+pip install flask flask_restful flask_cors
+```
+
+### Start backend Python server
+```
+cd backend/
+FLASK_APP=server.py FLASK_DEBUG=1 flask run
+```
+### or start like this
+```
+cd backend/
+python3 server.py
+
+```
+
+# Set up Vue.js Frontend with vue-cli
 
 ## Project setup
 ```
