@@ -21,7 +21,7 @@ export default {
     getDataFromBackend () {
             let path = ""
             path = process.env.VUE_APP_ROOT_API + "/hierarchical"
-            // const path = `http://localhost:5000/hierarchical`
+            //path = `http://localhost:5000/hierarchical`
             axios.get(path)
             .then(response => {
                 this.cluster = response.data.data
@@ -35,11 +35,9 @@ export default {
     },
   created () {
     this.getDataFromBackend()
-    },
-   // mounted () {
-   //  this.createTree(this.cluster)
-   // }
+    }
 }
+
 
 </script>
 <style>

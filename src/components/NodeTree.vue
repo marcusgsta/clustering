@@ -15,19 +15,16 @@
 
       <ul>
 
-          <span v-if="node.left != null">
-            <!-- send cluster['left'] to new Node template -->
+      <span v-if="node.left != null">
+        <!-- send cluster['left'] to new Node template -->
             <node :node="node.left"></node>
-      <!-- </ul> -->
-        </span>
+      </span>
 
       <span v-if="node.right != null">
-
           <node :node="node.right"></node>
       </span>
 
       </ul>
-            <!-- send cluster['right'] to new Node template -->
 
   </li>
 </template>

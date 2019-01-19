@@ -16,8 +16,11 @@ export default {
     treeData: Object
   },
   components: {
-    // NodeTree
-    NodeTree: () => import('./NodeTree.vue')
-  }
+    NodeTree
+},
+// beforeCreate: function () {
+//  this.$options.components.NodeTree = require('./NodeTree.vue').default
+// }
+
 };
 </script>
