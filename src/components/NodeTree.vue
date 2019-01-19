@@ -15,12 +15,13 @@
 
       <ul>
 
-          <span v-if="node.left != null"
+          <span v-if="node.left != null">
             <!-- send cluster['left'] to new Node template -->
             <node :node="node.left"></node>
       <!-- </ul> -->
+        </span>
 
-      <span v-if="node.right">
+      <span v-if="node.right != null">
 
           <node :node="node.right"></node>
       </span>

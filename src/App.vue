@@ -2,8 +2,8 @@
   <v-app dark>
     <v-toolbar app>
       <v-toolbar-title class="headline text-uppercase">
-        <span>K-MEANS</span>
-        <span class="font-weight-light">CLUSTERING</span>
+
+        <span>CLUSTERING</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <!-- <v-btn

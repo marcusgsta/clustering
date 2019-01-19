@@ -79,10 +79,8 @@ export default {
             // console.log("process.env.BACKEND_HOST")
             // console.log(process.env.BACKEND_HOST)
             // path = process.env.BACKEND_HOST + `/iterations/` + iters
-        } else {
-            console.log("process.env.VUE_APP_ROOT_API")
-            console.log(process.env.VUE_APP_ROOT_API)
-            console.log(process.env)
+         }
+        else {
             // path = `http://marcusgsta-ai.info:5000`
             path = process.env.VUE_APP_ROOT_API;
             // path = process.env.VUE_APP_BACKEND_HOST + `:5000`
