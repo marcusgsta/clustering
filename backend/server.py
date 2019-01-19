@@ -5,6 +5,7 @@ from flask_restful import Resource, Api
 from json import dumps
 
 from clusters import *
+from hierarchical import *
 
 # app = Flask(__name__, template_folder='templates')
 # app = Flask(__name__, template_folder='src/views/')
@@ -98,6 +99,22 @@ class Kmeans2(Resource):
         return jsonify(response)
 
 
+class Hierarchical(Resource):
+    def get(self):
+        header = {'Content-Type': 'text/html'}
+        #read data file
+        blognames,words,data = readfile('blogdata.txt')
+        # data contains a list of lists with word counts
+        initialClusters = createClusters(data)
+        finalCluster = hierarchical(initialClusters)
+
+        response = {
+            'data': finalCluster,
+            'blognames': blognames
+        }
+        return jsonify(response)
+
+
 class Test(Resource):
     def get(self):
         headers = {'Content-Type': 'text/html'}
@@ -109,6 +126,7 @@ class Test(Resource):
 api.add_resource(Test, '/test') # Route
 api.add_resource(Kmeans2, '/') # Route
 api.add_resource(Kmeans, '/iterations/<iters>') # Route
+api.add_resource(Hierarchical, '/hierarchical') # Route
 
 
 @app.route('/', defaults={'path': ''})

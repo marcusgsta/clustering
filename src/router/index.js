@@ -4,6 +4,7 @@ const routerOptions = [
   { path: '/', component: 'Home' },
   { path: '/about', component: 'About' },
   { path: '/iterations/:iters', component: 'Home'},
+  { path: '/hierarchical', component: 'Hierarchical'},
   { path: '/test', component: 'Test'}
 ]
 const routes = routerOptions.map(route => {

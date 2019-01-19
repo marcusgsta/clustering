@@ -1,4 +1,6 @@
 import Vue from 'vue';
+import Vuex from 'vuex'
+Vue.use(Vuex)
 import './plugins/vuetify'
 // import Vuetify from 'vuetify'
 // Vue.use(Vuetify)
@@ -27,9 +29,21 @@ import 'roboto-fontface/css/roboto/roboto-fontface.css'
 
 Vue.config.productionTip = false;
 
+const store = new Vuex.Store({
+  state: {
+    blognames: []
+  },
+  mutations: {
+    setBlognames (state, blognames) {
+      state.blognames = blognames
+    }
+  }
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   render: h => h(App),
 });

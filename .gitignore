@@ -20,5 +20,5 @@ yarn-error.log*
 *.sln
 *.sw*
 
-# Python virutal environment folder
+# Python virtual environment folder
 /venv36

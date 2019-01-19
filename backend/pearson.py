@@ -8,7 +8,8 @@ def pearson(user1, user2):
     returns a pearson correlation coefficient
     between 0 and 1
     """
-
+    #print(len(user1))
+    #print(len(user2))
     # Sum of each user's ratings
     sum1 = sum(user1)
     sum2 = sum(user2)
