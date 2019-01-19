@@ -16,7 +16,8 @@ export default {
     treeData: Object
   },
   components: {
-    NodeTree
+    // NodeTree
+    NodeTree: () => import('./NodeTree.vue')
   }
 };
 </script>
