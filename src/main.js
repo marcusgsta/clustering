@@ -21,14 +21,10 @@ library.add(faFacebook,faTwitter,faGooglePlus,faLinkedin,faInstagram
     )
 library.add(faFolder)
 library.add(faCoffee)
-    // fab fa-twitter,
-    // fab fa-google-plus,
-    // fab fa-linkedin,
-    // fab fa-instagram
+
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 import 'roboto-fontface/css/roboto/roboto-fontface.css'
-// import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
 Vue.config.productionTip = false;
 

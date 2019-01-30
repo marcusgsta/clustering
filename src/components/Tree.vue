@@ -20,9 +20,5 @@ export default {
   components: {
     NodeTree
 },
-// beforeCreate: function () {
-//  this.$options.components.NodeTree = require('./NodeTree.vue').default
-// }
-
 };
 </script>

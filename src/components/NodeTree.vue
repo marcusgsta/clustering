@@ -21,13 +21,9 @@
           <node :node="node.right"></node>
       </ul>
 
-
-
     </li>
 
 </template>
-
-
 
 <script>
 
