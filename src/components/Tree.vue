@@ -1,8 +1,9 @@
 <template>
   <div class="tree">
     <ul class="tree-list">
+        <span v-if="treeData">
       <Node-Tree :node="treeData"></Node-Tree>
-
+        </span>
 
     </ul>
   </div>
