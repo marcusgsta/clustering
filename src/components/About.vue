@@ -1,7 +1,5 @@
 <template>
-    <v-container grid-list-md>
-
-
+    <v-container grid-list-md fluid>
 
     <v-layout row wrap>
         <v-flex md6>
