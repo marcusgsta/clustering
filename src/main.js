@@ -9,15 +9,18 @@ import router from './router';
 import 'vuetify/dist/vuetify.min.css' // Ensure you are using css-loader
 
 import { library } from '@fortawesome/fontawesome-svg-core'
+
 import { faFacebook,faTwitter,faGooglePlus,faLinkedin,faInstagram
      } from '@fortawesome/free-brands-svg-icons'
-     // fa-twitter,
-     // fa-google-plus,
-     // fa-linkedin,
-     // fa-instagram
+
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { faFolder } from '@fortawesome/free-solid-svg-icons'
+
 library.add(faFacebook,faTwitter,faGooglePlus,faLinkedin,faInstagram
     )
+library.add(faFolder)
+library.add(faCoffee)
     // fab fa-twitter,
     // fab fa-google-plus,
     // fab fa-linkedin,

@@ -1,32 +1,30 @@
 <template>
 
-  <li class="node-tree">
+  <li class="node-tree" v-if="node != null">
 
-      <span class="distance" v-if="node.id < 0">
-          Group<br/>
-          {{ node.distance }}
-      </span>
+     <font-awesome-icon icon="folder"/>
 
-      <span v-else class="label">
-          {{ node.id }}
-          {{ bnames[node.id] }}
-      </span>
+     <!-- if node is leaf node, print its data -->
+     <span v-if="node.left == null && node.right == null">
 
+         {{ bnames[node.id] }}
 
-      <ul>
+     </span>
 
-      <span v-if="node.left != null">
-        <!-- send cluster['left'] to new Node template -->
-            <node :node="node.left"></node>
-      </span>
-
-      <span v-if="node.right != null">
-          <node :node="node.right"></node>
-      </span>
-
+      <!-- if left child exists, check for leaf recursively -->
+      <ul v-if="node.left != null">
+          <node :node="node.left"></node>
       </ul>
 
-  </li>
+      <!-- if right child exists, check for leaf recursively -->
+      <ul v-if="node.right != null">
+          <node :node="node.right"></node>
+      </ul>
+
+
+
+    </li>
+
 </template>
 
 

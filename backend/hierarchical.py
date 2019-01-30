@@ -57,12 +57,11 @@ def hierarchical(clusters):
                 if (clusters[i].id, clusters[j].id) not in distances:
                     distances[(clusters[i].id, clusters[j].id)] = pearson(clusters[i].blog, clusters[j].blog)
 
-                #print(distances)
                 d = distances[(clusters[i].id, clusters[j].id)]
 
-            if d < closest:
-                closest = d
-                lowestPair = (i,j)
+                if d < closest:
+                    closest = d
+                    lowestPair = (i,j)
         # calculate the average of the two clusters
 
         mergeBlogs = []
@@ -71,7 +70,6 @@ def hierarchical(clusters):
             avg = round(avg, 4)
             mergeBlogs.append(avg)
 
-        #print(clusters[lowestPair[0]])
         #create the new cluster
         newCluster = Cluster(
             mergeBlogs, left=clusters[lowestPair[0]], right=clusters[lowestPair[1]],
@@ -79,10 +77,9 @@ def hierarchical(clusters):
             id=currentClustid
             )
 
-        # cluster ids that werent in the original set are negative ??
+        # cluster ids that werent in the original set are negative
 
         currentClustid -= 1
-
 
         del clusters[lowestPair[1]]
         del clusters[lowestPair[0]]
@@ -91,23 +88,36 @@ def hierarchical(clusters):
     return clusters[0]
 
 
-# def printTree(cluster, blognames, tab=" "):
-#     """
-#     Recursive function to print tree
-#     """
-#
-#     print(tab + blognames[cluster.id] + " " + str(cluster.distance))
-#
-#     tab += " "
-#
-#     if (cluster.left != None):
-#         printTree(cluster.left, blognames, tab)
-#         print(blognames[cluster.left.id])
-#     if (cluster.right != None):
-#         printTree(cluster.right, blognames, tab)
-#         print(blognames[cluster.right.id])
-#
-#     return None
+def printLeafNodes(cluster, blognames, tab=" "):
+    """
+    Recursive function to print tree
+    """
+
+
+    # if node is null, return
+    if (cluster is None):
+        return
+
+    print("folder")
+
+    # If node is leaf node, print its data
+    if (cluster.left is None and cluster.right is None):
+        tab += " "
+        print("\n" + tab + blognames[cluster.id] + " " + str(cluster.distance))
+        return
+
+    # If left child exists, check for leaf recursively
+    if (cluster.left):
+        print("left")
+        printLeafNodes(cluster.left, blognames, tab)
+
+    # If right child exists, check for leaf recursively
+    if (cluster.right):
+        print("right")
+        printLeafNodes(cluster.right, blognames, tab)
+
+        #print(blognames[cluster.right.id])
+
 
 
 

@@ -7,8 +7,7 @@ from json import dumps
 from clusters import *
 from hierarchical import *
 
-# app = Flask(__name__, template_folder='templates')
-# app = Flask(__name__, template_folder='src/views/')
+
 app = Flask(__name__,
             static_folder = "../dist/static",
             template_folder = "../dist")
