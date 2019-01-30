@@ -19,19 +19,20 @@ export default {
 },
   methods: {
     getDataFromBackend () {
-            let path = ""
-            path = process.env.VUE_APP_ROOT_API + "/hierarchical"
-            //path = `http://localhost:5000/hierarchical`
-            axios.get(path)
-            .then(response => {
-                this.cluster = response.data.data
-                //this.blognames = response.data.blognames
-                this.$store.commit('setBlognames', response.data.blognames)
-            })
-            .catch(error => {
-                console.log(error)
-            })
-        }
+        let path = ""
+        path = process.env.VUE_APP_ROOT_API + "/hierarchical"
+        console.log(path)
+        //path = `http://localhost:5000/hierarchical`
+        axios.get(path)
+        .then(response => {
+            this.cluster = response.data.data
+            //this.blognames = response.data.blognames
+            this.$store.commit('setBlognames', response.data.blognames)
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    }
     },
   created () {
     this.getDataFromBackend()
