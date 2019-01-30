@@ -14,6 +14,7 @@ import NodeTree from "./NodeTree";
 
 export default {
   props: {
+    name: "node",
     treeData: Object
   },
   components: {

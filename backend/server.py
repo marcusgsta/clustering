@@ -128,6 +128,7 @@ api.add_resource(Kmeans, '/iterations/<iters>') # Route
 api.add_resource(Hierarchical, '/hierarchical') # Route
 
 
+
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def catch_all(path):
