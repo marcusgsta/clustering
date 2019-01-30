@@ -1,6 +1,6 @@
 <template>
 
-  <li class="node-tree" v-if="node != null">
+  <li class="node-tree" v-if="node">
 
      <font-awesome-icon icon="folder"/>
 
